@@ -1,0 +1,27 @@
+{
+  "name": "burger-time",
+  "version": "1.0.0",
+  "description": "creating a burger logger with MySQL, Node, Express, Handlebars and ORM",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ahang/burger.git"
+  },
+  "author": "Andy H",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ahang/burger/issues"
+  },
+  "homepage": "https://github.com/ahang/burger#readme",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2",
+    "express-handlebars": "^3.0.0",
+    "method-override": "^2.3.8",
+    "mysql": "^2.13.0",
+    "sequelize": "^3.30.4"
+  }
+}

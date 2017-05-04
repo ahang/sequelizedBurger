@@ -1,0 +1,41 @@
+<div class="container">
+    <div class="row">
+        <img src="/assets/img/simpson.png" class="img-fluid col-6-md col-md-offset-3" alt="burger image">
+        <div class="col-md-12 header-burger"><h1>All the Burgers</h1></div>
+    </div>
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            {{#each burgers}}
+            	{{#unless this.devoured}}
+                    <form action="/{{this.id}}?_method=PUT" method="POST">
+                        <p class="uneaten">{{this.id}}. {{this.burger_name}}
+                        <input type="hidden" name="devoured" value="1">
+                        <button class="btn-primary" type="submit">Devour It!</button></p>
+                    </form>
+                {{/unless}}
+            {{/each}}
+        </div>
+        <div class="col-md-4">
+            {{#each burgers}}
+                {{#if this.devoured}}
+                    <p class="eaten">{{this.id}}. {{this.burger_name}}</p>
+                {{/if}}
+            {{/each}}
+        </div>
+    </div>
+</div>
+
+<div class="container main-burger">
+    <div class="row">
+        <div class="col-md-12">
+            <form class="create-form add-burger" action="/" method="POST">
+                <div class="form-group">
+                    <label for="burger_name">Burger:</label>
+                    <input type="text" id="burger_name" name="burger" placeholder="Burger Name">
+                <button type="submit btn-primary">Order a burger</button>
+                <h3 class="welcome-text">Welcome to Krusty Burger. What would you like to eat?</h3>
+            </form>
+        </div>
+    </div>
+</div>
