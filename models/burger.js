@@ -1,19 +1,17 @@
-//Importing the ORM to create functions to interact with the database
-console.log("Burger Models Operational");
-
-var burger = {
-    all: function(callback) {
-
-    },
-
-    newBurger: function(vals, callback) {
-
-    },
-
-    eaten: function(newInput, pageId, callback) {
-
-    }
+module.exports = function(sequelize, DataTypes) {
+    var Burgers = sequelize.define("Burgers", {
+        burger_name: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            valudate: {
+                len: [1, 140]
+            }
+        },
+        devoured: {
+            type: DataTypes.BOOLEAN,
+            allowNull: false,
+            defaultValue: false
+        }
+    });
+    return Burgers;
 };
-
-//Exporting the database function for the controller
-module.exports = burger;
