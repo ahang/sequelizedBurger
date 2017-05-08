@@ -1,6 +1,5 @@
 console.log("Controller Operational");
 var express = require("express");
-
 var router = express.Router();
 
 //Importing the model to use database function
@@ -24,17 +23,17 @@ router.post("/", function(req, res) {
     });
 });
 
-router.post("/:id", function(req, res) {
-    console.log(req);
-    console.log(req.body.devoured);
-    console.log(req.params.id);
+router.put("/:id", function(req, res) {
+    // console.log(req);
+    // console.log(req.body.devoured);
+    // console.log(req.params.id);
     db.Burgers.update({
         devoured: req.body.devoured
     }, {
         where: {
             id: req.params.id
         }
-    }).then(function() {
+    }).then(function(results) {
         res.redirect("/");
     });
 });

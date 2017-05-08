@@ -9,6 +9,7 @@ var PORT = process.env.PORT || 3000;
 
 //Serve static content from public directory
 app.use(express.static(process.cwd() + "/public"));
+app.use(methodOverride("_method"));
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
