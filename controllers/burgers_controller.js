@@ -24,7 +24,7 @@ router.post("/", function(req, res) {
     });
 });
 
-router.put("/:id", function(req, res) {
+router.post("/:id", function(req, res) {
     console.log(req);
     console.log(req.body.devoured);
     console.log(req.params.id);
@@ -34,7 +34,7 @@ router.put("/:id", function(req, res) {
         where: {
             id: req.params.id
         }
-    }).success(function() {
+    }).then(function() {
         res.redirect("/");
     });
 });
