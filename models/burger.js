@@ -3,7 +3,7 @@ module.exports = function(sequelize, DataTypes) {
         burger_name: {
             type: DataTypes.STRING,
             allowNull: false,
-            valudate: {
+            validate: {
                 len: [1, 140]
             }
         },
